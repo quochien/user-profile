@@ -1,0 +1,125 @@
+<%= render "shared/navigations" %>
+<br/>
+<br/>
+
+<%= form_for current_user, url: update_experts_users_path, method: :post do |f| %>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_name, "Name", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :expert_name, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_service, "Service", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :expert_service, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_introduction, "Introduction", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :expert_introduction, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_specialities, "Specialities", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :expert_specialities, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_skills_and_methods, "Skills & Methods", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :expert_skills_and_methods, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_languages, "Languages", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :expert_languages, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_rate_per_minute, "Rate /mm", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.number_field :expert_rate_per_minute, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_profile_picture, "Profile Pic", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.file_field :expert_profile_picture, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    Status:
+    <br/>
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_call_enabled, "Call", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.radio_button :expert_call_enabled, true, checked: true, value: true %> Call Now
+        or
+        <%= f.radio_button :expert_call_enabled, false, value: false %> Arrange Call
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-3">
+        <%= f.label :expert_chat_enabled, "Chat", class: "control-label" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.radio_button :expert_chat_enabled, true, checked: true, value: true %> Chat Now
+        or
+        <%= f.radio_button :expert_chat_enabled, false, value: false %> Chat Later
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="text-center">
+      <%= f.submit "Save", class: "btn btn-normal" %>
+    </div>
+  </div>
+<% end %>

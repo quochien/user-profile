@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_113249) do
+ActiveRecord::Schema.define(version: 2018_06_27_152011) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2018_06_27_113249) do
     t.string "provider"
     t.string "uid"
     t.string "image"
+    t.string "expert_name"
+    t.string "expert_service"
+    t.string "expert_introduction"
+    t.string "expert_specialities"
+    t.string "expert_skills_and_methods"
+    t.string "expert_languages"
+    t.decimal "expert_rate_per_minute"
+    t.string "expert_profile_picture"
+    t.boolean "expert_call_enabled"
+    t.boolean "expert_chat_enabled"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

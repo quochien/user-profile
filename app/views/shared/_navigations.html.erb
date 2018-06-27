@@ -1,0 +1,8 @@
+<% if(!user_signed_in?) %>
+  <li><%= link_to "User Login", new_user_session_path %></li>
+  <li><%= link_to "User Signup", new_user_registration_path %></li>
+<% else %>
+  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+  <li><%= link_to "Be an expert", experts_users_path %></li>
+  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+<% end %>
