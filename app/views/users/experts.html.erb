@@ -117,9 +117,12 @@
                 <%= f.label :expert_call_enabled, "Call", class: "control-label" %>
               </div>
               <div class="col-sm-9">
-                <%= f.radio_button :expert_call_enabled, true, checked: true, value: true %> Call Now
-                or
-                <%= f.radio_button :expert_call_enabled, false, value: false %> Arrange Call
+                <div class="col-sm-2">
+                  <%= f.radio_button :expert_call_enabled, true, checked: true, value: true %> Call Now
+                </div>
+                <div class="col-sm-2">
+                  <%= f.radio_button :expert_call_enabled, false, value: false %> Arrange Call
+                </div>
               </div>
             </div>
 
@@ -128,9 +131,12 @@
                 <%= f.label :expert_chat_enabled, "Chat", class: "control-label" %>
               </div>
               <div class="col-sm-9">
-                <%= f.radio_button :expert_chat_enabled, true, checked: true, value: true %> Chat Now
-                or
-                <%= f.radio_button :expert_chat_enabled, false, value: false %> Chat Later
+                <div class="col-sm-2">
+                  <%= f.radio_button :expert_chat_enabled, true, checked: true, value: true %> Chat Now
+                </div>
+                <div class="col-sm-2">
+                  <%= f.radio_button :expert_chat_enabled, false, value: false %> Chat Later
+                </div>
               </div>
             </div>
           </div>
