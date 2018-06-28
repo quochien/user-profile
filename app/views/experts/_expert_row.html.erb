@@ -1,18 +1,15 @@
 <div class="media">
   <div class="media-left">
-    <div class="media-thumbnail img-cirle">
-      <%= image_tag(expert.expert_profile_picture_url.presence || "/assets/images/avatar.jpg", { style: "max-width: 150px;", class: "media-object img-cirle" })%>
-        <div class="heart-like"><i class="fa fa-heart-o"></i></div>
-    </div>
+    <%= image_tag(expert.expert_profile_picture_url.presence || "/assets/avatar.jpg", { style: "width: 150px;" })%>
   </div>
   <div class="media-body">
     <div class="row">
-      <div class="col-sm-5 col-xs-12">
+      <div class="col-sm-7 col-xs-12">
         <h4 class="media-heading"><%= link_to expert.expert_name, expert_path(expert) %></h4>
         <h5><%= expert.expert_service %></h5>
         <div><%= expert.expert_introduction %></div>
       </div>
-      <div class="col-sm-4 col-xs-7">
+      <div class="col-sm-2 col-xs-7">
           <div class="counter-info">
             <h4>4.6 RATING</h4>
             <div class="counter-body">1,260 REVIEWS</div>
