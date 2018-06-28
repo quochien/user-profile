@@ -1,0 +1,13 @@
+<% tab ||= "profile" %>
+
+<ul class="nav nav-tabs nav-user-tabs">
+  <li role="presentation" class="<%= "active" if tab == "profile" %>">
+    <%= link_to "Edit Profile", edit_user_registration_path %>
+  </li>
+  <li role="presentation" class="<%= "active" if tab == "expert" %>">
+    <%= link_to "Be an expert", experts_users_path %>
+  </li>
+  <li role="presentation" class="<%= "active" if tab == "password" %>">
+    <%= link_to "Change password", edit_password_path(current_user) %>
+  </li>
+</ul>
