@@ -86,6 +86,8 @@
         <%= f.label :expert_profile_picture, "Profile Pic", class: "control-label" %>
       </div>
       <div class="col-sm-9">
+        <%= image_tag(current_user.expert_profile_picture_url, { style: "max-width: 150px;" }) if current_user.expert_profile_picture_url %>
+          <br/>
         <%= f.file_field :expert_profile_picture, class: "form-control" %>
       </div>
     </div>
