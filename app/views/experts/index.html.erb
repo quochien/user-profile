@@ -1,3 +1,7 @@
-<% @experts.each do |expert| %>
-  <%= render "expert_row", expert: expert %>
-<% end %>
+<%= render "shared/navigations" %>
+
+<div class="media-list expert-list">
+  <% @experts.each do |expert| %>
+      <%= render "expert_row", expert: expert %>
+  <% end %>
+</div>

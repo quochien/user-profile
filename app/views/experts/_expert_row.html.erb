@@ -1,43 +1,45 @@
-<div class="row">
-  <div class="col-sm-2">
-    <%= image_tag(expert.expert_profile_picture_url, { style: "max-width: 150px;" }) if expert.expert_profile_picture_url %>
-  </div>
-  <div class="col-sm-6">
-    <h2><%= link_to expert.expert_name, expert_path(expert) %></h2>
-    <h3><%= expert.expert_service %></h3>
-    <div><%= expert.expert_introduction %></div>
-  </div>
-  <div class="col-sm-2">
-    <h4>
-      4.6 RATING
-      <br/>
-      1,260 REVIEWS
-    </h4>
-    <h4>
-      9,360
-      <br/>
-      READINGS
-    </h4>
-    <h4>
-      <%= expert.created_at.year %>
-      <br/>
-      ADVISOR SINCE
-    </h4>
-  </div>
-  <div class="col-sm-2">
-    <div class="expert-rate">
-      10 minutes for $1.99
-      <br/>
-      $<%= expert.expert_rate_per_minute %>/min
-    </div>
-    <br/>
-    <div>
-      <%= expert.expert_call_enabled ? 'CALL NOW' : 'CALL LATER' %>
-    </div>
-    <br/>
-    <div>
-      <%= expert.expert_chat_enabled ? 'CHAT NOW' : 'CHAT LATER' %>
+<div class="media">
+  <div class="media-left">
+    <div class="media-thumbnail img-cirle">
+      <%= image_tag(expert.expert_profile_picture_url.presence || "/assets/images/avatar.jpg", { style: "max-width: 150px;", class: "media-object img-cirle" })%>
+        <div class="heart-like"><i class="fa fa-heart-o"></i></div>
     </div>
   </div>
-  <hr/>
+  <div class="media-body">
+    <div class="row">
+      <div class="col-sm-5 col-xs-12">
+        <h4 class="media-heading"><%= link_to expert.expert_name, expert_path(expert) %></h4>
+        <h5><%= expert.expert_service %></h5>
+        <div><%= expert.expert_introduction %></div>
+      </div>
+      <div class="col-sm-4 col-xs-7">
+          <div class="counter-info">
+            <h4>4.6 RATING</h4>
+            <div class="counter-body">1,260 REVIEWS</div>
+          </div>
+          <div class="counter-info">
+            <h4>9,360</h4>
+            <div class="counter-body">READINGS</div>
+          </div>
+          <div class="counter-info">
+            <h4><%= expert.created_at.year %></h4>
+            <div class="counter-body">ADVISOR SINCE</div>
+          </div>
+      </div>
+      <div class="col-sm-3 col-xs-5">
+         <div class="btn btn-sm btn-danger btn-block btn-arrow arrow-left expert-rate">
+            10 minutes for $1.99
+         </div>
+         <h5>$<%= expert.expert_rate_per_minute %>/min</h5>
+         <a class="btn btn-success btn-block">
+           <i class="fa fa-phone"></i>
+           <%= expert.expert_call_enabled ? 'CALL NOW' : 'CALL LATER' %>
+         </a>
+         <a class="btn btn-default btn-block">
+           <i class="fa fa-comment"></i>
+           <%= expert.expert_chat_enabled ? 'CHAT NOW' : 'CHAT LATER' %>
+         </a>
+      </div>
+    </div>
+  </div>
 </div>
