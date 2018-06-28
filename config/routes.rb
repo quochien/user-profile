@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       post :update_experts
     end
   end
+
+  resources :experts, only: [:index, :show]
 end
