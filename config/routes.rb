@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: :registrations }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :experts
       post :update_experts
+      get :profile
     end
   end
 

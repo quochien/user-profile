@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     redirect_to experts_users_path
   end
 
+  def profile
+  end
+
   private
 
   def expert_params
