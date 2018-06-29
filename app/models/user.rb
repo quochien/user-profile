@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   mount_uploader :expert_profile_picture, ExpertProfilePictureUploader
+
+  belongs_to :expert_category
 end

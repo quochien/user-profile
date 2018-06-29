@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :expert_name,
       :expert_service,
+      :expert_category_id,
       :expert_introduction,
       :expert_specialities,
       :expert_skills_and_methods,

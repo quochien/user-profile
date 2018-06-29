@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+expert_categories = ["Psychic readings", "Love & relationships", "Life questions", "Tarot readings", "Spiritual readings", "All categories"]
+expert_categories.each do |name|
+  ExpertCategory.where(name: name).first_or_create
+end
