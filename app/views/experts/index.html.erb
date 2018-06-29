@@ -1,7 +1,14 @@
 <%= render "shared/navigations" %>
-
+<h3>All experts</h3>
 <div class="media-list expert-list">
   <% @experts.each do |expert| %>
       <%= render "expert_row", expert: expert %>
   <% end %>
+  <hr/>
+  <div class="pull-right">
+    <%= link_to "Back", root_url %>
+  </div>
 </div>
+<br/>
+<br/>
+<br/>

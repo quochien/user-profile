@@ -9,11 +9,11 @@
     <h3><%= @expert.expert_service %></h3>
     <div class="row">
       <div class="counter-info col-sm-4">
-        <h4>4.6 RATING</h4>
-        <div class="counter-body">0 REVIEWS</div>
+        <h4><%= @expert.expert_rating %> RATING</h4>
+        <div class="counter-body"><%= @expert.expert_review_count %> REVIEWS</div>
       </div>
       <div class="counter-info col-sm-4">
-        <h4>0</h4>
+        <h4><%= @expert.expert_reading_count %></h4>
         <div class="counter-body">READINGS</div>
       </div>
       <div class="counter-info col-sm-4">

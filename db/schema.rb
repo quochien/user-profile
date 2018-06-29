@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_29_123509) do
+ActiveRecord::Schema.define(version: 2018_06_29_145213) do
 
   create_table "expert_categories", force: :cascade do |t|
     t.string "name"
@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(version: 2018_06_29_123509) do
     t.boolean "expert_call_enabled"
     t.boolean "expert_chat_enabled"
     t.integer "expert_category_id"
+    t.integer "expert_review_count", default: 0
+    t.integer "expert_reading_count", default: 0
+    t.float "expert_rating", default: 0.0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

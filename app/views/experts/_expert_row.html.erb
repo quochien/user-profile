@@ -10,18 +10,18 @@
         <div><%= expert.expert_introduction %></div>
       </div>
       <div class="col-sm-2 col-xs-7">
-          <div class="counter-info">
-            <h4>4.6 RATING</h4>
-            <div class="counter-body">1,260 REVIEWS</div>
-          </div>
-          <div class="counter-info">
-            <h4>9,360</h4>
-            <div class="counter-body">READINGS</div>
-          </div>
-          <div class="counter-info">
-            <h4><%= expert.created_at.year %></h4>
-            <div class="counter-body">ADVISOR SINCE</div>
-          </div>
+        <div class="counter-info">
+          <h4><%= expert.expert_rating %> RATING</h4>
+          <div class="counter-body"><%= expert.expert_review_count %> REVIEWS</div>
+        </div>
+        <div class="counter-info">
+          <h4><%= expert.expert_reading_count %></h4>
+          <div class="counter-body">READINGS</div>
+        </div>
+        <div class="counter-info">
+          <h4><%= expert.created_at.year %></h4>
+          <div class="counter-body">ADVISOR SINCE</div>
+        </div>
       </div>
       <div class="col-sm-3 col-xs-5">
          <div class="btn btn-sm btn-danger btn-block btn-arrow arrow-left expert-rate">
