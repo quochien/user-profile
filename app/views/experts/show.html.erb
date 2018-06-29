@@ -38,23 +38,27 @@
   </div>
 </div>
 <br/>
+<hr/>
 <div class="row">
   <div class="col-sm-4">
+    <h4>Specialities</h4>
     <%= @expert.expert_specialities %>
   </div>
   <div class="col-sm-4">
+    <h4>Skill & Method</h4>
     <%= @expert.expert_skills_and_methods %>
   </div>
   <div class="col-sm-4">
+    <h4>Languages</h4>
     <%= @expert.expert_languages %>
   </div>
 </div>
 <br/>
+<hr/>
 <div class="row">
   <div class="col-sm-12">
     <h4>Introduction</h4>
-    <hr/>
-    <%= @expert.expert_introduction %>
+    <p class="text-justify"><%= @expert.expert_introduction %></p>
   </div>
 </div>
 <br/>
