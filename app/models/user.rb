@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
   mount_uploader :expert_profile_picture, ExpertProfilePictureUploader
 
-  belongs_to :expert_category
+  has_one :expert_category
 end
