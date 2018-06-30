@@ -22,6 +22,7 @@ gem "omniauth-facebook"
 gem "figaro"
 gem 'carrierwave'
 gem 'fog-aws'
+#gem 'ratyrate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

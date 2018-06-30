@@ -13,6 +13,12 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def rating
+    if user = User.find_by_id(params[:id])
+      user.rate(params[:rating].to_i)
+    end
+  end
+
   private
 
   def expert_params
