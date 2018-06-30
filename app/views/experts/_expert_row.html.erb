@@ -24,18 +24,7 @@
         </div>
       </div>
       <div class="col-sm-3 col-xs-5">
-         <div class="btn btn-sm btn-danger btn-block btn-arrow arrow-left expert-rate">
-            10 minutes for $1.99
-         </div>
-         <h5>$<%= expert.expert_rate_per_minute %>/min</h5>
-         <a class="btn btn-success btn-block">
-           <i class="fa fa-phone"></i>
-           <%= expert.expert_call_enabled ? 'CALL NOW' : 'CALL LATER' %>
-         </a>
-         <a class="btn btn-default btn-block">
-           <i class="fa fa-comment"></i>
-           <%= expert.expert_chat_enabled ? 'CHAT NOW' : 'CHAT LATER' %>
-         </a>
+        <%= render "availabilites", expert: expert %>
       </div>
     </div>
   </div>
