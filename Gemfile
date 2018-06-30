@@ -21,6 +21,7 @@ gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "figaro"
 gem 'carrierwave'
+gem 'fog-aws'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
