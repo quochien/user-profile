@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-sm-2">
-    <%= image_tag(@expert.expert_profile_picture_url.presence || "/assets/avatar.jpg", { style: "max-width: 150px;", class: "media-object img-cirle" })%>
+    <%= image_tag(@expert.expert_profile_picture_url.presence || "/assets/avatar.jpg", { style: "width: 100%;", class: "media-object img-cirle" })%>
   </div>
   <div class="col-sm-8">
     <h2><%= @expert.expert_name %></h2>
