@@ -14,12 +14,28 @@ class UsersController < ApplicationController
   end
 
   def rating
-    if user = User.find_by_id(params[:id])
-      user.rate(params[:rating].to_i)
+    if expert = User.find_by_id(params[:id])
+      # expert.rate(params[:rating].to_i)
+      if current_user
+        review = Review.new(review_params)
+        review.user_id = current_user.id
+        review.expert_id = expert.id
+        review.save
+
+        expert.rate(review.rating)
+
+        flash[:success] = "You have rated #{review.rating.to_i} for #{expert.expert_name}"
+      end
+
+      redirect_to expert_path(expert)
     end
   end
 
   private
+
+  def review_params
+    params.require(:review).permit(:rating, :comments)
+  end
 
   def expert_params
     params.require(:user).permit(

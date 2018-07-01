@@ -9,7 +9,7 @@
     <h3><%= @expert.expert_service %></h3>
     <div class="row">
       <div class="counter-info col-sm-4">
-        <h4><%= @expert.expert_rating.round(1) %> <div class="starrr"></div></h4>
+        <h4><%= @expert.expert_rating.round(1) %> <div id="overall-rating" class="starrr"></div></h4>
         <div class="counter-body"><%= @expert.expert_review_count %> REVIEWS</div>
       </div>
       <div class="counter-info col-sm-4">
@@ -51,6 +51,15 @@
   </div>
 </div>
 <br/>
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>Customer Review</h4>
+      <%= render "review_form" %>
+    </div>
+  </div>
+  <br/>
+<% end %>
 <div class="row">
   <div class="col-sm-12">
     <%= link_to "Back", experts_path, class: "pull-right" %>
@@ -58,13 +67,15 @@
 </div>
 <script>
   $(function() {
-    $('.starrr').starrr({
+    $('#overall-rating').starrr({
       rating: <%= @expert.expert_rating.round %>,
+      readOnly: true
+    });
+
+    $('#rating').starrr({
+      rating: 0,
       change: function(e, value){
-        // alert('new rating is ' + value)
-        $.post("/users/<%=@expert.id%>/rating", {
-          rating: value
-        });
+        $('#review_rating').val(value);
       }
     });
   });

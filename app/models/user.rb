@@ -8,6 +8,7 @@ class User < ApplicationRecord
   mount_uploader :expert_profile_picture, ExpertProfilePictureUploader
 
   has_one :expert_category
+  has_many :reviews, foreign_key: :expert_id
 
   def rate(rating)
     count = expert_review_count + 1
