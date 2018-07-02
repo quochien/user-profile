@@ -1,6 +1,6 @@
 <div class="media">
   <div style="float: left; width: 150px !important; margin-right: 10px;">
-    <%= image_tag(expert.expert_profile_picture_url.presence || "/assets/avatar.jpg", { style: "width: 150px;" })%>
+    <%= image_tag(expert.expert_profile_picture_url.presence || "/assets/avatar.jpg", { style: "width: 100%;" })%>
   </div>
   <div class="media-body">
     <div class="row">
@@ -11,7 +11,7 @@
       </div>
       <div class="col-sm-2 col-xs-7">
         <div class="counter-info">
-          <h4><%= expert.expert_rating %> RATING</h4>
+          <h4><%= expert.expert_rating.round(1) %> <div id="rating<%=expert.id%>" class="starrr"></div></h4>
           <div class="counter-body"><%= expert.expert_review_count %> REVIEWS</div>
         </div>
         <div class="counter-info">
@@ -29,3 +29,11 @@
     </div>
   </div>
 </div>
+<script>
+  $(function() {
+    $("#rating<%=expert.id%>").starrr({
+      rating: <%= expert.expert_rating.round %>,
+      readOnly: true
+    });
+  });
+</script>

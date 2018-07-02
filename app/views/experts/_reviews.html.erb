@@ -1,0 +1,47 @@
+<h4><%= @expert.expert_rating.round(1) %> <div id="overall-rating-2" class="starrr"></div></h4>
+<div class="counter-body"><%= @expert.expert_review_count %> REVIEWS</div>
+<a href="#">Learn more about feedback and rating</a>
+<br/>
+<br/>
+<% 5.downto(1).each do |star| %>
+  <% percent = @rating_counts[star][:percent] %>
+  <div class="row">
+    <div class="col-sm-1"><%= star %> star</div>
+    <div class="col-sm-4">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: <%= percent %>%" aria-valuenow="<%= percent %>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+    <div class="col-sm-1"><%= percent > 0 ? percent : "< 1" %>%</div>
+  </div>
+<% end %>
+
+<h4>Recent Customer Reviews</h4>
+
+<div>
+  Filter By
+  <%= select_tag 'review-filter', options_for_select([['All Reviews', 'all'], ['Written Reviews', 'written']], params[:filter]) %>
+
+</div>
+
+<% @reviews.each do |review| %>
+  <h4><div id="overall-rating-review-<%= review.id %>" class="starrr"></div></h4>
+  <%= display_date(review.created_at) %>&nbsp;&nbsp;&nbsp;<%= review.user&.name %>
+  <div style="font-size: 16px;"><%= simple_format(review.comments) %></div>
+<% end %>
+
+<script>
+  $(function() {
+    <% @reviews.each do |review| %>
+      $('#overall-rating-review-<%= review.id %>').starrr({
+        rating: <%= review.rating.round %>,
+        readOnly: true
+      });
+    <% end %>
+
+    $('#review-filter').change(function() {
+      url = window.location.href.split(/[?#]/)[0]
+      window.location.href = url + '?filter=' + this.value;
+    });
+  });
+</script>

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       post :update_experts
       get :profile
     end
+
+    member do
+      post :rating
+    end
   end
 
   resources :experts, only: [:index, :show]

@@ -1,0 +1,17 @@
+<%= form_for :review, url: rating_user_path(@expert), method: :post, html: { class: "form-horizontal" } do |f| %>
+  <label>Rating: </label>
+  <div id="rating" class="starrr"></div>
+  <%= f.hidden_field :rating, class: "form-control" %>
+  <br/>
+
+  <label>Your comments: </label>
+  <br/>
+  <%= f.text_area :comments, rows: 5, class: "form-control" %>
+  <br/>
+
+  <div class="row">
+    <div class="text-center">
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
