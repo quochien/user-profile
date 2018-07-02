@@ -19,3 +19,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
+
+@media (max-width: 400px) {
+  .expert-status {
+    font-size: 2px;
+  }
+}
+
+@media (max-width: 546px) {
+  .expert-status {
+    font-size: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  .expert-status {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 991px) {
+  .expert-status {
+    font-size: 10px;
+  }
+}
