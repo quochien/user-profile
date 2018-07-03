@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_03_040517) do
+ActiveRecord::Schema.define(version: 2018_07_03_072554) do
 
   create_table "expert_categories", force: :cascade do |t|
     t.string "name"
@@ -59,9 +59,6 @@ ActiveRecord::Schema.define(version: 2018_07_03_040517) do
     t.string "expert_name"
     t.string "expert_service"
     t.string "expert_introduction"
-    t.string "expert_specialities"
-    t.string "expert_skills_and_methods"
-    t.string "expert_languages"
     t.decimal "expert_rate_per_minute"
     t.string "expert_profile_picture"
     t.boolean "expert_call_enabled"
