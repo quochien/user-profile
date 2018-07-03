@@ -33,15 +33,15 @@
 <div class="row">
   <div class="col-sm-4">
     <h4>Specialities</h4>
-    <%= @expert.expert_specialities %>
+    <%= @expert.specialities.pluck(:name).join("<br/>").html_safe %>
   </div>
   <div class="col-sm-4">
     <h4>Skill & Method</h4>
-    <%= @expert.expert_skills_and_methods %>
+    <%= @expert.skills.pluck(:name).join("<br/>").html_safe %>
   </div>
   <div class="col-sm-4">
     <h4>Languages</h4>
-    <%= @expert.expert_languages %>
+    <%= @expert.languages.pluck(:name).join("<br/>").html_safe %>
   </div>
 </div>
 <br/>

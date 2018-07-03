@@ -61,21 +61,18 @@
           <div class="row">
             <div class="form-group">
               <div class="col-sm-3">
-                <%= f.label :expert_specialities, "Specialities", class: "control-label" %>
+                <%= f.label :specialities, "Specialities", class: "control-label" %>
               </div>
-              <div class="col-sm-9">
-                <%= f.text_area :expert_specialities, class: "form-control" %>
+              <div class="col-sm-7" id="specialities-fields">
+                <%= f.fields_for :specialities do |speciality| %>
+                  <div style="margin-bottom: 5px;">
+                    <%= speciality.hidden_field :id %>
+                    <%= speciality.text_field :name, class: "form-control" %>
+                  </div>
+                <% end %>
               </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="form-group">
-              <div class="col-sm-3">
-                <%= f.label :expert_skills_and_methods, "Skills & Methods", class: "control-label" %>
-              </div>
-              <div class="col-sm-9">
-                <%= f.text_area :expert_skills_and_methods, class: "form-control" %>
+              <div class="col-sm-2">
+                <a href="javascript:void(0)" id="add-more-speciality" class="btn btn-primary">Add More</a>
               </div>
             </div>
           </div>
@@ -83,10 +80,37 @@
           <div class="row">
             <div class="form-group">
               <div class="col-sm-3">
-                <%= f.label :expert_languages, "Languages", class: "control-label" %>
+                <%= f.label :skills, "Skills & Methods", class: "control-label" %>
               </div>
-              <div class="col-sm-9">
-                <%= f.text_area :expert_languages, class: "form-control" %>
+              <div class="col-sm-7" id="skills-fields">
+                <%= f.fields_for :skills do |skill| %>
+                  <div style="margin-bottom: 5px;">
+                    <%= skill.hidden_field :id %>
+                    <%= skill.text_field :name, class: "form-control" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-sm-2">
+                <a href="javascript:void(0)" id="add-more-skill" class="btn btn-primary">Add More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <div class="col-sm-3">
+                <%= f.label :languages, "Languages", class: "control-label" %>
+              </div>
+              <div class="col-sm-7" id="languages-fields">
+                <%= f.fields_for :languages do |language| %>
+                  <div style="margin-bottom: 5px;">
+                    <%= language.hidden_field :id %>
+                    <%= language.text_field :name, class: "form-control" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-sm-2">
+                <a href="javascript:void(0)" id="add-more-language" class="btn btn-primary">Add More</a>
               </div>
             </div>
           </div>

@@ -2,10 +2,18 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def experts
+    current_user.specialities = [Speciality.new] unless current_user.specialities.exists?
+    current_user.skills = [Skill.new] unless current_user.skills.exists?
+    current_user.languages = [Language.new] unless current_user.languages.exists?
   end
 
   def update_experts
-    current_user.update_attributes(expert_params)
+    current_user.assign_attributes(expert_params)
+    current_user.save
+    current_user.specialities.where(name: [nil, '']).destroy_all
+    current_user.skills.where(name: [nil, '']).destroy_all
+    current_user.languages.where(name: [nil, '']).destroy_all
+
     flash[:success] = "Expert updated successfully!"
     redirect_to experts_users_path
   end
@@ -43,13 +51,16 @@ class UsersController < ApplicationController
       :expert_service,
       :expert_category_id,
       :expert_introduction,
-      :expert_specialities,
-      :expert_skills_and_methods,
-      :expert_languages,
+      # :expert_specialities,
+      # :expert_skills_and_methods,
+      # :expert_languages,
       :expert_rate_per_minute,
       :expert_profile_picture,
       :expert_call_enabled,
-      :expert_chat_enabled
+      :expert_chat_enabled,
+      specialities_attributes: [:id, :name],
+      skills_attributes: [:id, :name],
+      languages_attributes: [:id, :name]
     )
   end
 end

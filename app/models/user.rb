@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_many :specialities
   has_many :skills
   has_many :languages
+  accepts_nested_attributes_for :specialities, allow_destroy: true
+  accepts_nested_attributes_for :skills, allow_destroy: true
+  accepts_nested_attributes_for :languages, allow_destroy: true
 
   def rate(rating)
     count = expert_review_count + 1
