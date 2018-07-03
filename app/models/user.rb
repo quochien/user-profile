@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   has_one :expert_category
   has_many :reviews, foreign_key: :expert_id
+  has_many :specialities
+  has_many :skills
+  has_many :languages
 
   def rate(rating)
     count = expert_review_count + 1

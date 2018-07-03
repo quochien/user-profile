@@ -10,9 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_093716) do
+ActiveRecord::Schema.define(version: 2018_07_03_040517) do
 
   create_table "expert_categories", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name"
   end
 
@@ -23,6 +28,16 @@ ActiveRecord::Schema.define(version: 2018_07_02_093716) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+  end
+
+  create_table "specialities", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
